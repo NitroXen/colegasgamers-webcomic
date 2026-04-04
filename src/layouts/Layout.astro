@@ -1,23 +1,69 @@
+---
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/icon/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary: #0070f3;
+    --secondary: #ff6b6b;
+    --tertiary: #a0ff75;
+    --background-a: #eeabff;
+    --background: linear-gradient(
+      145deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
+    --text: #29292e;
+    --text-shadow: #666;
+    --border-color: #d739ff;
+    --border: 3px solid var(--black);
+    --border-radius: 25px;
+    --white: #ffffff;
+    --black: #000000;
+  }
+
+  html {
+    font-size: 1rem;
+  }
+
+  body {
+    background: var(--background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text);
+    width: 100%;
+    height: 100%;
+  }
+
+  body,
+  input,
+  button {
+    font-family: sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
 </style>

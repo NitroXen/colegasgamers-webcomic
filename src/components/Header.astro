@@ -1,0 +1,161 @@
+---
+
+---
+
+<header class="header">
+  <div class="logo">
+    <a href="./">
+      <img src="/web/logo_cg.jpg" alt="logo CG" />
+    </a>
+  </div>
+  <div class="mobile">
+    <button class="mobile--menu">Menu</button>
+    <nav class="mobile__nav">
+      <a href="./BlogComic">Blog del Comic</a>
+
+      <a href="Personajes.html">personajes</a>
+
+      <a href="capitulos.html">capitulos</a>
+
+      <a href="tienda.html">Tienda</a>
+
+      <a href="multimedia.html">Multimedia</a>
+
+      <a href="FanMade.html">Zona Fan-Made</a>
+    </nav>
+  </div>
+  <nav class="header__nav">
+    <a href="./BlogComic">Blog del Comic</a>
+
+    <a href="Personajes.html">personajes</a>
+
+    <a href="capitulos.html">capitulos</a>
+
+    <a href="tienda.html">Tienda</a>
+
+    <a href="multimedia.html">Multimedia</a>
+
+    <a href="FanMade.html">Zona Fan-Made</a>
+  </nav>
+</header>
+
+<style>
+  .header {
+    margin: 3rem;
+  }
+  .logo {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    transition: all 0.5s ease-in-out;
+    background-color: var(--white);
+  }
+
+  .logo:hover {
+    border-color: var(--border-color);
+  }
+
+  .logo img {
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: 100%;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .mobile {
+    display: none;
+  }
+
+  .header__nav a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--black);
+    padding: 10px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--background-a);
+  }
+  .header__nav a.active {
+    animation: textAnimation 3s infinite ease-in-out;
+  }
+
+  @keyframes textAnimation {
+    0% {
+      color: var(--secondary);
+    }
+    25% {
+      color: var(--tertiary);
+    }
+    50% {
+      color: var(--primary);
+    }
+    75% {
+      color: var(--tertiary);
+    }
+    100% {
+      color: var(--secondary);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header__nav {
+      display: none;
+    }
+    .mobile {
+      display: block;
+    }
+
+    .mobile--menu {
+      border: var(--border);
+      border-radius: var(--border-radius);
+      background-color: var(--background-a);
+      padding: 1.3rem;
+      cursor: pointer;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .mobile--menu:hover {
+      border-color: var(--border-color);
+    }
+
+    .mobile__nav {
+      background-color: var(--tertiary);
+      border-radius: var(--border-radius);
+      padding: 1rem 0;
+      display: none;
+      a {
+        text-decoration: none;
+        color: var(--black);
+      }
+    }
+    .mobile__nav.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: xx-large;
+    }
+  }
+</style>
+
+<script>
+  const links = document.querySelectorAll("a");
+  links.forEach((link) => {
+    if (link.href === window.location.href) {
+      link.classList.add("active");
+    }
+  });
+
+  const button = document.querySelector(".mobile--menu");
+  const nav = document.querySelector(".mobile__nav");
+  button.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+</script>
