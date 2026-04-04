@@ -6,11 +6,26 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1 class="main__h1">Colegas Gamers Web Comic Blog</h1>
+  <h1>Colegas Gamers Web Comic Blog</h1>
+
+  <div class="inicio">
+    <h2>Bienvenidos</h2>
+    <p>
+      este es un proyecto con todo lujo de detalles de una aplicación web de uno
+      de mis comics que hice en el instituto. <span>Colegas Gamers</span>. esto
+      es un experimento de muestra de mis dominios de html, css y javascript con
+      el framework astro.
+    </p>
+  </div>
 </Layout>
 
 <style>
-  .main__h1 {
-    text-align: center;
+  .inicio {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: var(--background-a);
+    margin: 0 auto;
+    padding: 1.3rem;
+    width: 60%;
   }
 </style>

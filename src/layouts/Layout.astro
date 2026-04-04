@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -9,11 +10,12 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/icon/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Colegas Gamers WebComic</title>
   </head>
   <body>
     <Header />
     <slot />
+    <Footer />
   </body>
 </html>
 
@@ -26,8 +28,8 @@ import Header from "../components/Header.astro";
   }
 
   :root {
-    --primary: #0070f3;
-    --secondary: #ff6b6b;
+    --primary: #005eca;
+    --secondary: #ff2626;
     --tertiary: #a0ff75;
     --background-a: #eeabff;
     --background: linear-gradient(
@@ -65,5 +67,13 @@ import Header from "../components/Header.astro";
 
   button {
     cursor: pointer;
+  }
+
+  h1 {
+    text-align: center;
+    background-color: #005eca;
+    padding: 1rem;
+    margin: 1rem 2rem;
+    color: var(--white);
   }
 </style>

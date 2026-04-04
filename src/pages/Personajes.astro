@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CharacterProfile from "../components/CharacterProfile.astro";
+const characters = [
+  {
+    name: "/web/pixel-speech-bubble.gif",
+    image: "/web/Lucas.png",
+    description:
+      "Su sueño es ser el mejor jugador de Tiro Certero del mundo, pero su estado de estudiante no le permite jugar todos los dias como el quiere, menos mal que tiene a Neil, Jenny, Jack y FRONKY para jugar en el finde, tiene algun que otro sintoma de insomnio visto en clase, su tutor y profesor Drive siempre le castiga por dormir en clase.",
+  },
+  {
+    name: "/web/Neil_canter.gif",
+    image: "/web/Neil.png",
+    description:
+      "Su sueño es dessarrollar el mejor juego del mundo, estudiar le podria servirle de mucho pero con la llegada de Joy Ruby se distrae con facilidad con su belleza extranjera, Lucas siempre le ayuda a concentrarse con gritos, su enemigo Hector siempre le gasta bromas hackers como colarse en su cuenta, registrarse a paginas web pornograficas y esas cosas.",
+  },
+  {
+    name: "/web/Jenny.gif",
+    image: "/web/Jenny.png",
+    description:
+      "Periodista, Dectective, Fisgona: son las cualidades de una chica con tiempo libre, se hizo amiga de Joy cuando se sentaron cerca en clase y desde entonces le enseña todo sobre esta ciudad y sus costumbres, esta enamorada de Lucas pero lo esconde muy bien, de hecho tiene un peluche con la cara de Lucas que es su mayor tesoro.",
+  },
+  {
+    name: "/web/JOY_RUBY.GIF",
+    image: "",
+    description:
+      "De una Region de Rumania, Joy vino a Briss City para olvidar su pasado debido a que su padre pertenece a una tribu satanica, su madre, al darse cuenta sobre el poder que le pesaba se llevo a Joy muy lejos, hasta acabar en Briss City, no es muy habladora pero tiene talento para el ajedrez.",
+  },
+  {
+    name: "/web/DOC.GIF",
+    image: "",
+    description:
+      "Extrabajador de Player System, el doctor Brainius Ryzen tercero trabaja su vida en dispositivos Gaming del Futuro, su abuelo y su padre se dedicaban al diseño de dispositivos de ordenador como: raton de mano tridimensional, escaners virtualizadores, etc...; Lucas Y Neil son los primeros en probar los inventos de Brainius y a veces en robarselos con consecuencias catastroficas.",
+  },
+  {
+    name: "/web/Jack_quinn.gif",
+    image: "",
+    description: "",
+  },
+  {
+    name: "/web/blu.gif",
+    image: "",
+    description:
+      "El hacker del instituto y enemigo poderoso de Neil. Aprendio a hackear a los 12 años pero solo conocío caos a traves de la red, Neil Y Hector se odian por una discusion por el anime MonstHuman por unos finales alternativos",
+  },
+  {
+    name: "/web/frizz.gif",
+    image: "",
+    description: "",
+  },
+  {
+    name: "/web/bance.gif",
+    image: "",
+    description:
+      "Desde los 6 años, Bruce siempre ha estado aprendiendo sobre electronica e informatica, algunos profesores de tecnologia dicen que pueden crear aparatos que puede escapar de nuestra logica, su madre siempre le ha animado a hacer sus proyectos pero con su advertencia de no tener los enchufes sueltos y tirados del suelo, a veces Lucas y Neil le piden que les haga aparatos de gaming avanzado: desde mandos gaming hasta cascos de pura realidad virtual 'como SAO'",
+  },
+  {
+    name: "/web/fronky.gif",
+    image: "",
+    description:
+      "Con su sueño de ser el mejor rapero de pais, aprende de los raperos que ve en internet haciendo que pueda rimar con casi perfecion, tamien es un gamer y siempre ayuda a lucas y neil en sus partidas y ya de paso les da banda sonora, tambien sabe tocar instrumentos musicales seguramente tambien aprendido en internet.",
+  },
+  {
+    name: "/web/drive.gif",
+    image: "",
+    description: "",
+  },
+  {
+    name: "/web/lucy.gif",
+    image: "",
+    description:
+      "La hermana menor de Lucas, es muy joven para entender los desafios gamers de su hermano mayor y siempre sueña en destruirle la consola de su hermano para devolverlo a la realidad.",
+  },
+  {
+    name: "/web/el_conde.gif",
+    image: "",
+    description:
+      "El mecenas de Briss-City, financia lo que sea pero tiene un obstaculo que quiere destruir: Los Videojuegos. Tras numerosos intentos, Lucas y Neil lo detienen y retrasa sus planes.",
+  },
+  {
+    name: "/web/pepi-kill.gif",
+    image: "",
+    description:
+      "pepinillo robotico genocida empeñado en destruir la vida universal",
+  },
+];
+---
+
+<Layout>
+  <h1>Personajes</h1>
+
+  <div class="list">
+    {characters.map((character) => <CharacterProfile {...character} />)}
+  </div>
+</Layout>
+
+<style>
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+</style>

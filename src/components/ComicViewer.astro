@@ -1,0 +1,82 @@
+---
+
+---
+
+<div class="gallery">
+  <img class="gallery__image" />
+  <p id="count"></p>
+  <div class="buttons">
+    <button class="gallery__button" id="prev">Prev</button>
+    <button class="gallery__button" id="next">Next</button>
+  </div>
+</div>
+
+<style>
+  p {
+    color: var(--white);
+    font-size: larger;
+    padding: 0.8rem;
+  }
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .gallery__button {
+    margin: 1rem;
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const image = document.querySelector(".gallery__image");
+  const next = document.querySelector("#next");
+  const prev = document.querySelector("#prev");
+  const count = document.querySelector("#count");
+
+  const comics = [
+    { title: "Piloto", image: "/web/comics/001.png" },
+    { title: "El PC del Futuro", image: "/web/comics/002.jpg" },
+    { title: "La Dama Imposible", image: "/web/comics/003.jpg" },
+    { title: "Ritmos Armoniosos", image: "/web/comics/004.jpg" },
+  ];
+
+  let index = 0;
+
+  function update() {
+    image.src = comics[index].image;
+    image.alt = comics[index].title;
+    count.innerHTML = `${index + 1}/${comics.length}`;
+  }
+
+  count.innerHTML = `${index + 1}/${comics.length}`;
+
+  function nextComic() {
+    index = (index + 1) % comics.length;
+    update();
+  }
+
+  function prevComic() {
+    index = (index - 1 + comics.length) % comics.length;
+    update();
+  }
+
+  next?.addEventListener("click", nextComic);
+  prev?.addEventListener("click", prevComic);
+
+  image.src = comics[index].image;
+  image.alt = comics[index].title;
+</script>
