@@ -1,11 +1,11 @@
 ---
-
+import Logo from "/public/web/logo_cg.jpg";
 ---
 
 <header class="header">
   <div class="logo">
     <a href="./">
-      <img src="/web/logo_cg.jpg" alt="logo CG" />
+      <img src={Logo.src} alt="logo CG" />
     </a>
   </div>
   <div class="mobile">
@@ -13,17 +13,17 @@
     <nav class="mobile__nav">
       <a href="./BlogComic">Blog del Comic</a>
 
-      <a href="./Personajes">personajes</a>
+      <a href="./Personajes">Personajes</a>
 
-      <a href="./Capitulos">capitulos</a>
+      <a href="./Capitulos">Capitulos</a>
     </nav>
   </div>
   <nav class="header__nav">
     <a href="./BlogComic">Blog del Comic</a>
 
-    <a href="./Personajes">personajes</a>
+    <a href="./Personajes">Personajes</a>
 
-    <a href="./Capitulos">capitulos</a>
+    <a href="./Capitulos">Capitulos</a>
   </nav>
 </header>
 
@@ -96,6 +96,9 @@
     }
     .mobile {
       display: block;
+    }
+    .logo {
+      width: 100%;
     }
 
     .mobile--menu {
